@@ -1,0 +1,23 @@
+{
+  "name": "weatherapp_expressjs",
+  "version": "1.0.0",
+  "description": "weatherapp project using expressJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickcarvlh/WeatherApp_ExpressJS.git"
+  },
+  "author": "Ricardo Carvalho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rickcarvlh/WeatherApp_ExpressJS/issues"
+  },
+  "homepage": "https://github.com/rickcarvlh/WeatherApp_ExpressJS#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^2.0.4"
+  }
+}
