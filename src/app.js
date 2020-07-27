@@ -12,19 +12,33 @@ const app = express();
 //  req -> resquest res -> response
 app.get('', (req, res) => {
   // send data to the requester
-  res.send('Hello express!');
+  res.send('<h1>Hello express!</h1>');
 });
 
 app.get('/help', (req, res) => {
-  res.send('Help page');
+  res.send([
+    {
+      name: 'Ricardo',
+    },
+    {
+      name: 'Jorge',
+    },
+  ]);
 });
 
 app.get('/about', (req, res) => {
-  res.send('About page');
+  res.send('<h1>About</h1>');
 });
 
 app.get('/weather', (req, res) => {
-  res.send('Weather page');
+  res.send([
+    {
+      forcast: 'It is snowing',
+    },
+    {
+      location: 'Seixal',
+    },
+  ]);
 });
 
 // for secure conections it's diferent
