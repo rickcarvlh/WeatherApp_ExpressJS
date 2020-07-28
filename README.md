@@ -7,7 +7,9 @@ WeatherApp with ExpressJS
 - Webserver <br>
 - Using version 4.16.4 <br>
 - HTML / JSON <br>
+- Template engine <br>
 
 ## Notes: npm packages used: <br>
 
-- nodemon
+- nodemon <br>
+- hbs <br>
