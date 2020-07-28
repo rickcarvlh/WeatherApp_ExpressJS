@@ -1,6 +1,14 @@
+const path = require('path');
 const express = require('express');
 
+console.log(__dirname);
+// to serve the public directory
+console.log(path.join(__dirname, '../public'));
+
 const app = express();
+const publicDirectory = path.join(__dirname, '../public');
+
+app.use(express.static(publicDirectory));
 
 /* domain example -> one expre server , diferent routes 
     app.com
@@ -9,27 +17,6 @@ const app = express();
 */
 
 // * Routes
-//  req -> resquest res -> response
-app.get('', (req, res) => {
-  // send data to the requester
-  res.send('<h1>Hello express!</h1>');
-});
-
-app.get('/help', (req, res) => {
-  res.send([
-    {
-      name: 'Ricardo',
-    },
-    {
-      name: 'Jorge',
-    },
-  ]);
-});
-
-app.get('/about', (req, res) => {
-  res.send('<h1>About</h1>');
-});
-
 app.get('/weather', (req, res) => {
   res.send([
     {

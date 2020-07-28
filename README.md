@@ -10,4 +10,4 @@ WeatherApp with ExpressJS
 
 ## Notes: npm packages used: <br>
 
-- modemon
+- nodemon
