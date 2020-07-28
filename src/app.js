@@ -8,6 +8,8 @@ console.log(path.join(__dirname, '../public'));
 const app = express();
 const publicDirectory = path.join(__dirname, '../public');
 
+// set template engine used by us
+app.set('view engine', 'hbs');
 app.use(express.static(publicDirectory));
 
 /* domain example -> one expre server , diferent routes 
