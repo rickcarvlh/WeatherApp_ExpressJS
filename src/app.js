@@ -19,6 +19,27 @@ app.use(express.static(publicDirectory));
 */
 
 // * Routes
+app.get('', (req, res) => {
+  res.render('index', {
+    title: 'Weather App',
+    name: 'Ricardo Carvalho',
+  });
+});
+
+app.get('/about', (req, res) => {
+  res.render('about', {
+    title: 'About page',
+    name: 'Ricardo Carvalho',
+  });
+});
+
+app.get('/help', (req, res) => {
+  res.render('help', {
+    title: 'Help page',
+    description: 'This is the help page',
+  });
+});
+
 app.get('/weather', (req, res) => {
   res.send([
     {
