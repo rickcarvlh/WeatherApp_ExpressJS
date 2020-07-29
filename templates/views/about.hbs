@@ -9,11 +9,17 @@
 </head>
 
 <body>
-    <h1>{{title}}</h1>
+    <section>
+        <header>
+            {{>header}}
+        </header>
+    </section>
     <figure>
         <img src="img/avatar_default_16_545452.png" alt="reddit image" />
-        <figcaption>Created by {{name}}</figcaption>
     </figure>
+    <footer>
+        {{>footer}}
+    </footer>
 </body>
 
 </html>

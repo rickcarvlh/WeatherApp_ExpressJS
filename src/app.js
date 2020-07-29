@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const hbs = require('hbs');
 
 console.log(__dirname);
 // to serve the public directory
@@ -10,12 +11,14 @@ const app = express();
 // * Define path for express configuration
 const publicDirectory = path.join(__dirname, '../public');
 // changing from views to templates
-const viewsPath = path.join(__dirname, '../templates');
+const viewsPath = path.join(__dirname, '../templates/views');
+const partialsPath = path.join(__dirname, '../templates/partials');
 
-// * Setup handlebars and views location
+// * Setup handlebars, views location, partials location
 app.set('view engine', 'hbs');
 // needed if i want to change default folder name
 app.set('views', viewsPath);
+hbs.registerPartials(partialsPath);
 
 // * Setup static directory to serve static files
 app.use(express.static(publicDirectory));
@@ -45,6 +48,7 @@ app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help page',
     description: 'This is the help page',
+    name: 'Ricardo Carvalho',
   });
 });
 

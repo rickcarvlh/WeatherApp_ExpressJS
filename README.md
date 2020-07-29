@@ -13,3 +13,7 @@ WeatherApp with ExpressJS
 
 - nodemon <br>
 - hbs <br>
+
+## Command to use: <br>
+
+nodemon src/app.js -e js,hbs
