@@ -6,14 +6,18 @@ console.log(__dirname);
 console.log(path.join(__dirname, '../public'));
 
 const app = express();
+
+// * Define path for express configuration
 const publicDirectory = path.join(__dirname, '../public');
 // changing from views to templates
 const viewsPath = path.join(__dirname, '../templates');
 
-// set template engine used by us
+// * Setup handlebars and views location
 app.set('view engine', 'hbs');
 // needed if i want to change default folder name
 app.set('views', viewsPath);
+
+// * Setup static directory to serve static files
 app.use(express.static(publicDirectory));
 
 /* domain example -> one expre server , diferent routes 
