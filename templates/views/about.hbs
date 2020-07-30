@@ -5,21 +5,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="/img/weather.png">
     <title>About page</title>
 </head>
 
 <body>
-    <section>
-        <header>
-            {{>header}}
-        </header>
+
+    <section class="main-content">
+        {{>header}}
+
+        <figure>
+            <img src="img/avatar_default_16_545452.png" alt="reddit image" class="portrait" />
+        </figure>
     </section>
-    <figure>
-        <img src="img/avatar_default_16_545452.png" alt="reddit image" />
-    </figure>
-    <footer>
-        {{>footer}}
-    </footer>
+
+    {{>footer}}
 </body>
 
 </html>

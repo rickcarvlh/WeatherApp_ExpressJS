@@ -4,6 +4,14 @@ body {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 16px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
 }
 
 header {
@@ -31,4 +39,19 @@ footer {
   border-top: 1px solid #eee;
   margin-top: 16px;
   padding-top: 16px 0;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+/*  fix figure bug */
+/* img {
+  display: block;
+} */
+
+.portrait {
+  width: 250px;
+  display: block;
 }
