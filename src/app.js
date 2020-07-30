@@ -63,8 +63,25 @@ app.get('/weather', (req, res) => {
   ]);
 });
 
+// * 404 pages
+app.get('/help/*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    name: 'Ricardo Carvalho',
+    errorMessage: 'Help article not found',
+  });
+});
+
+app.get('*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    name: 'Ricardo Carvalho',
+    errorMessage: 'Page not found',
+  });
+});
+
 // for secure conections it's diferent
-// start the express server - dev port 30000
+// * start the express server - dev port 30000
 app.listen(3000, () => {
   console.log('Server is up on port 30000');
 });
