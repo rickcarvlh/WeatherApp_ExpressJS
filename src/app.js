@@ -1,6 +1,8 @@
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
+const geoCode = require('./shared/geocode');
+const forecast = require('./shared/forecast');
 
 console.log(__dirname);
 // to serve the public directory
@@ -58,17 +60,24 @@ app.get('/weather', (req, res) => {
       error: 'You must provide a address',
     });
   }
-  res.send([
-    {
-      forcast: 'It is snowing',
-    },
-    // {
-    //   address: 'Seixal',
-    // },
-    {
-      address: req.query.address,
-    },
-  ]);
+
+  geoCode(req.query.address, (error, { latitude, longitude, location }) => {
+    if (error) {
+      return res.send({ error });
+    }
+
+    forecast(latitude, longitude, (error, forecastData) => {
+      if (error) {
+        return res.send({ error });
+      }
+
+      res.send({
+        forecast: forecastData,
+        location,
+        address: req.query.address,
+      });
+    });
+  });
 });
 
 // query string
