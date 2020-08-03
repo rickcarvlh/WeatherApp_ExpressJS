@@ -2,6 +2,8 @@
 
 WeatherApp with ExpressJS
 
+- Ssh keys added to project
+
 ## ExpressJS Project Content: <br>
 
 - Webserver <br>

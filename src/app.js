@@ -9,6 +9,7 @@ console.log(__dirname);
 console.log(path.join(__dirname, '../public'));
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // * Define path for express configuration
 const publicDirectory = path.join(__dirname, '../public');
@@ -61,23 +62,26 @@ app.get('/weather', (req, res) => {
     });
   }
 
-  geoCode(req.query.address, (error, { latitude, longitude, location } = {}) => {
-    if (error) {
-      return res.send({ error });
-    }
-
-    forecast(latitude, longitude, (error, forecastData) => {
+  geoCode(
+    req.query.address,
+    (error, { latitude, longitude, location } = {}) => {
       if (error) {
         return res.send({ error });
       }
 
-      res.send({
-        forecast: forecastData,
-        location,
-        address: req.query.address,
+      forecast(latitude, longitude, (error, forecastData) => {
+        if (error) {
+          return res.send({ error });
+        }
+
+        res.send({
+          forecast: forecastData,
+          location,
+          address: req.query.address,
+        });
       });
-    });
-  });
+    }
+  );
 });
 
 // query string
@@ -112,6 +116,6 @@ app.get('*', (req, res) => {
 
 // for secure conections it's diferent
 // * start the express server - dev port 30000
-app.listen(3000, () => {
-  console.log('Server is up on port 30000');
+app.listen(port, () => {
+  console.log('Server is up on port 30000' + port);
 });
