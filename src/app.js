@@ -117,5 +117,5 @@ app.get('*', (req, res) => {
 // for secure conections it's diferent
 // * start the express server - dev port 30000
 app.listen(port, () => {
-  console.log('Server is up on port 30000' + port);
+  console.log('Server is up on port 3000' + port);
 });
