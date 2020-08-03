@@ -19,7 +19,12 @@ const forecast = (latitude, longitude, callback) => {
           body.current.temperature +
           ' degrees. It feels like ' +
           body.current.feelslike +
-          ' degrees outside'
+          ' degrees outside.' +
+          'The air humidity is currently ' +
+          body.current.humidity +
+          '%' +
+          ' and the uv index is ' +
+          body.current.uv_index
       );
     }
   });
