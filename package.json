@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/rickcarvlh/WeatherApp_ExpressJS#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "hbs": "^4.0.1",
     "postman-request": "^2.88.1-postman.24"
   },
